@@ -34,6 +34,9 @@ else:
     
     stats = df[vars_7].describe().T[['mean', 'std', 'min', 'max']]
     stats.columns = ['Mean', 'Std Dev', 'Min', 'Max']
+    table_path = os.path.join(root_folder, "tables", "Table1_General_Statistics.csv")
+    os.makedirs(os.path.dirname(table_path), exist_ok=True)
+    stats.round(2).to_csv(table_path)
     print("\nGeneral Statistics (1983-2014):")
     print(stats.round(2).to_string())
 

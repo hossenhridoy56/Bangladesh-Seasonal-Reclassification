@@ -7,9 +7,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 import os
 
-# ======================================================================
-# UNIVERSAL PATH CONFIGURATION
-# ======================================================================
 current_script_path = os.path.abspath(__file__)
 root_folder = os.path.dirname(os.path.dirname(current_script_path))
 
@@ -26,21 +23,17 @@ input_file = os.path.join(data_path, "FINAL_RESEARCH_READY_DATA.csv")
 if not os.path.exists(input_file):
     print(f"Error: {input_file} not found!")
 else:
-    # Load Data
     df = pd.read_csv(input_file)
     vars_7 = ['rainfall', 'tmax', 'tmin', 'cloud', 'wind', 'humidity', 'dry_bulb']
     month_order = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
-    # Climatological Profiling
     profile = df.groupby('Month')[vars_7].mean().reindex(month_order)
 
-    # ML Clustering (K-Means)
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(profile)
     km = KMeans(n_clusters=4, random_state=42, n_init=10)
     labels = km.fit_predict(scaled_data)
 
-    # Automated Seasonal Labeling based on Rainfall Ranks
     centroids = pd.DataFrame(scaler.inverse_transform(km.cluster_centers_), columns=vars_7)
     rain_rank = centroids['rainfall'].rank()
     
@@ -60,9 +53,6 @@ else:
         'Monsoon': '#4DAC26', 'Post-Monsoon': '#8073AC'
     }
 
-    # ======================================================================
-    # TABLE 3: SEASONAL CHARACTERISTICS (3 Decimals)
-    # ======================================================================
     table3 = profile.groupby('Season_Name')[vars_7].mean().reindex(['Winter', 'Pre-Monsoon', 'Monsoon', 'Post-Monsoon'])
     table3 = table3.round(3) 
     
@@ -76,9 +66,6 @@ else:
     print(table3.to_string())
     print("="*70)
 
-    # ======================================================================
-    # FIGURE 4: MULTI-VARIABLE PROFILES
-    # ======================================================================
     fig4, axes = plt.subplots(3, 3, figsize=(15, 12), facecolor='white')
     var_titles = {'rainfall': 'Rainfall (mm)', 'tmax': 'Tmax (°C)', 'tmin': 'Tmin (°C)', 
                   'cloud': 'Cloud (oktas)', 'wind': 'Wind (m/s)', 'humidity': 'Humidity (%)', 'dry_bulb': 'Dry-Bulb (°C)'}
@@ -92,7 +79,6 @@ else:
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
 
-    # Add Legend to the empty 9th subplot
     axes.flatten()[7].axis('off')
     axes.flatten()[8].axis('off')
     patches = [mpatches.Patch(color=v, label=k) for k, v in color_map.items()]
@@ -103,5 +89,27 @@ else:
     plt.savefig(fig4_path, dpi=300)
     plt.close()
 
-    print(f"\n✔ Success: Table 3 and Figure 4 saved.")
+    print(f"\n Success: Table 3 and Figure 4 saved.")
     print(f"Directory: {root_folder}")
+
+
+    plt.figure(figsize=(14, 7))
+    
+    scaled_df = pd.DataFrame(scaled_data.T, columns=month_order, index=[v.capitalize() for v in vars_7])
+    
+    sns.heatmap(scaled_df, annot=True, fmt=".2f", cmap='RdBu_r', center=0, 
+                linewidths=.5, cbar_kws={'label': 'Z-score'})
+    
+    for i, tick_label in enumerate(plt.gca().get_xticklabels()):
+        tick_label.set_color(color_map[season_labels[i]])
+        tick_label.set_weight('bold')
+
+    plt.title('Standardized Monthly Climate Profiles (Z-scores, 1983–2014)', fontsize=14, fontweight='bold', pad=20)
+    plt.xlabel('Month', fontweight='bold')
+    plt.ylabel('Variable', fontweight='bold')
+    
+    heatmap_path = os.path.join(fig_path, 'Figure5_Seasonal_Heatmap_Zscore.png')
+    plt.savefig(heatmap_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print(f"✅ Heatmap saved to: {heatmap_path}")

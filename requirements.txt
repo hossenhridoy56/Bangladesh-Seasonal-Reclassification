@@ -1,7 +1,8 @@
 pandas
 numpy
+scipy
 matplotlib
 seaborn
-scikit-learn
-scipy
 folium
+scikit-learn
+os-sys

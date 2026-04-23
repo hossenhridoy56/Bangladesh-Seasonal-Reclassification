@@ -6,9 +6,11 @@ import os
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
-base_path = r"C:\Bangladesh-Seasonal-Reclassification"
-data_path = os.path.join(base_path, r"data\processed")
-fig_path  = os.path.join(base_path, r"figures")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+base_path = os.path.abspath(os.path.join(script_dir, ".."))
+
+data_path = os.path.join(base_path, "data", "processed")
+fig_path  = os.path.join(base_path, "figures")
 
 os.makedirs(fig_path, exist_ok=True)
 
