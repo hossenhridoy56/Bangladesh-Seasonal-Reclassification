@@ -1,0 +1,3 @@
+Algorithm,Silhouette Score ↑,Davies–Bouldin Index ↓,Calinski–Harabasz Index ↑
+K-Means,0.381,0.517,16.245
+GMM,0.345,0.538,14.533

@@ -1,0 +1,5 @@
+Season,Months,rainfall,tmax,tmin,cloud,wind,humidity,dry_bulb
+Winter,"Jan, Feb, Dec",11.878,29.907,10.377,1.154,3.144,75.558,19.768
+Pre-Monsoon,"Mar, Apr, May",144.923,36.291,18.193,3.232,4.239,74.893,27.482
+Monsoon,"Jun, Jul, Aug, Sep",444.127,34.901,23.538,5.899,3.858,85.596,28.436
+Post-Monsoon,"Oct, Nov",117.275,33.545,17.655,2.587,3.03,80.948,25.444
