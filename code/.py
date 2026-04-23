@@ -53,6 +53,7 @@ else:
         'Monsoon': '#4DAC26', 'Post-Monsoon': '#8073AC'
     }
 
+    # Table 3 calculation
     table3 = profile.groupby('Season_Name')[vars_7].mean().reindex(['Winter', 'Pre-Monsoon', 'Monsoon', 'Post-Monsoon'])
     table3 = table3.round(3) 
     season_months = profile.reset_index().groupby('Season_Name')['Month'].apply(lambda x: ', '.join(x))
@@ -65,8 +66,10 @@ else:
     print(table3.to_string())
     print("="*70)
     
+    # FIGURE 4 SETUP
     fig4, axes = plt.subplots(3, 3, figsize=(15, 12), facecolor='white')
     
+    # মেইন টাইটেল এখানে সেট করা হয়েছে
     fig4.suptitle('Figure 4: Monthly climatological profiles of Bangladesh (1984-2014)', 
                   fontsize=16, fontweight='bold', y=0.95)
 
@@ -87,13 +90,14 @@ else:
     patches = [mpatches.Patch(color=v, label=k) for k, v in color_map.items()]
     axes.flatten()[8].legend(handles=patches, title='Season Clusters', loc='center')
 
-    plt.tight_layout(rect=[0, 0, 1, 0.93]) 
+    plt.tight_layout(rect=[0, 0, 1, 0.93]) # টাইটেলের জন্য জায়গা রাখা হয়েছে
     fig4_path = os.path.join(fig_path, 'Figure4_MonthlyProfiles.png')
     plt.savefig(fig4_path, dpi=300)
     plt.close()
 
     print(f"\n Success: Table 3 and Figure 4 saved.")
 
+    # FIGURE 5 (HEATMAP)
     plt.figure(figsize=(14, 7))
     scaled_df = pd.DataFrame(scaled_data.T, columns=month_order, index=[v.capitalize() for v in vars_7])
     

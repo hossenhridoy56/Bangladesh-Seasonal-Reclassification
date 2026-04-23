@@ -33,9 +33,6 @@ else:
     scaler = StandardScaler()
     scaled = scaler.fit_transform(profile)
 
-    # ======================================================================
-    # FIGURE 6: CLUSTER VALIDATION METRICS 
-    # ======================================================================
     ks, sils, dbs, chs = [], [], [], []
     for k in range(2, 8):
         km = KMeans(n_clusters=k, random_state=42, n_init=10)
@@ -75,9 +72,6 @@ else:
     plt.savefig(os.path.join(fig_path, 'Figure6_Validation_Metrics.png'), dpi=300)
     plt.close()
 
-    # ======================================================================
-    # FIGURE 7: DENDROGRAM 
-    # ======================================================================
     Z = sch.linkage(scaled, method='ward')
     stable_dist = 2.53 
 
@@ -102,9 +96,6 @@ else:
     plt.savefig(os.path.join(fig_path, 'Figure7_Dendrogram.png'), dpi=300, bbox_inches='tight')
     plt.close()
 
-    # ======================================================================
-    # TABLE 2: K-MEANS VS GMM COMPARISON
-    # ======================================================================
     gmm = GaussianMixture(n_components=4, random_state=42).fit(scaled)
     gmm_lab = gmm.predict(scaled)
 
