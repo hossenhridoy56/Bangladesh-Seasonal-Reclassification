@@ -99,16 +99,34 @@ else:
     gmm = GaussianMixture(n_components=4, random_state=42).fit(scaled)
     gmm_lab = gmm.predict(scaled)
 
+    from sklearn.cluster import AgglomerativeClustering
+    hac = AgglomerativeClustering(n_clusters=4).fit(scaled)
+    hac_lab = hac.labels_
+
+    gmm = GaussianMixture(n_components=4, random_state=42).fit(scaled)
+    gmm_lab = gmm.predict(scaled)
+
     table2_df = pd.DataFrame({
-        'Algorithm': ['K-Means', 'GMM'],
-        'Silhouette Score ↑': [sils[2], silhouette_score(scaled, gmm_lab)],
-        'Davies–Bouldin Index ↓': [dbs[2], davies_bouldin_score(scaled, gmm_lab)],
-        'Calinski–Harabasz Index ↑': [chs[2], calinski_harabasz_score(scaled, gmm_lab)]
+        'Algorithm': ['K-Means', 'GMM', 'Hierarchical (HAC)'],
+        'Silhouette Score ↑': [
+            sils[2], 
+            silhouette_score(scaled, gmm_lab),
+            silhouette_score(scaled, hac_lab)
+        ],
+        'Davies–Bouldin Index ↓': [
+            dbs[2], 
+            davies_bouldin_score(scaled, gmm_lab),
+            davies_bouldin_score(scaled, hac_lab)
+        ],
+        'Calinski–Harabasz Index ↑': [
+            chs[2], 
+            calinski_harabasz_score(scaled, gmm_lab),
+            calinski_harabasz_score(scaled, hac_lab)
+        ]
     })
     
     table2_df = table2_df.round(3)
-    table2_df.to_csv(os.path.join(tab_path, "Table2_Algorithm_Comparison.csv"), index=False)
-    
+    table2_df.to_csv(os.path.join(tab_path, "Table2_Algorithm_Comparison.csv"), index=False)    
     print("\n--- STEP 6: VALIDATION COMPLETE ---")
     print(f"Figure 6 & 7 saved in: {fig_path}")
     print(f"Table 2 saved in: {tab_path}")

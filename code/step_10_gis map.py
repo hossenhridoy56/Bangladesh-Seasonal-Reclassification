@@ -52,4 +52,4 @@ m.get_root().html.add_child(folium.Element(title_html))
 html_output = os.path.join(fig_path, "Figure1_Map.html")
 m.save(html_output)
 
-print(f"✅ Map successfully saved in: {html_output}")
+print(f"Map successfully saved in: {html_output}")

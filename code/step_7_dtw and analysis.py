@@ -63,18 +63,6 @@ canonical_order = ['Winter','Pre-Monsoon','Monsoon','Post-Monsoon']
 month_season = pd.Series(labels, index=months).map(season_map)
 
 
-profile['Season'] = month_season.values
-table3 = profile.groupby('Season')[features].mean().reindex(canonical_order)
-
-season_months = profile.reset_index().groupby('Season')['Month'].apply(
-    lambda x: ', '.join(x)
-).reindex(canonical_order)
-table3.insert(0, 'Months', season_months)
-
-table3_final = table3.round(2)
-table3_final.to_csv(os.path.join(tab_path, "Table3_Seasonal_Characteristics.csv"))
-
-
 def align_decade(dec_df):
     monthly = dec_df.groupby('Month')[features].mean().reindex(months)
     Xd = scaler.transform(monthly)
@@ -104,7 +92,7 @@ cluster_matrix = pd.DataFrame({
     'Decade2': lab2,
     'Decade3': lab3
 }, index=months)
-cluster_matrix.to_csv(os.path.join(tab_path, "Table5_Cluster_Matrix.csv"))
+cluster_matrix.to_csv(os.path.join(tab_path, "Cluster_Matrix.csv"))
 
 
 def get_profile(dec_df):
@@ -141,9 +129,6 @@ dtw_table = pd.DataFrame({
 }).round(6) 
 
 dtw_table.to_csv(os.path.join(tab_path, "Table4_DTW_Results.csv"), index=False)
-
-print("\n" + " TABLE 3: CHARACTERISTICS ".center(75, "="))
-print(table3_final.to_string())
 print("\n" + " DTW RESULTS ".center(75, "="))
 print(dtw_table.to_string(index=False))
 print("\n CORE ANALYSIS COMPLETE.")

@@ -51,9 +51,6 @@ def get_station_season_labels(st_df):
 
     return [season_map[l] for l in labels]
 
-# ================================
-# BUILD MATRIX
-# ================================
 matrix = []
 
 for st in stations:
@@ -62,9 +59,6 @@ for st in stations:
 
 matrix = pd.DataFrame(matrix, index=stations, columns=months)
 
-# ================================
-# COLOR MAP
-# ================================
 season_colors = {
     'Winter': '#2166AC',
     'Pre-Monsoon': '#D6604D',
@@ -72,13 +66,9 @@ season_colors = {
     'Post-Monsoon': '#8073AC'
 }
 
-# Convert to numeric for heatmap
 season_to_num = {k:i for i,k in enumerate(season_colors.keys())}
 num_matrix = matrix.replace(season_to_num)
 
-# ================================
-# PLOT
-# ================================
 plt.figure(figsize=(14,10))
 
 sns.heatmap(num_matrix,

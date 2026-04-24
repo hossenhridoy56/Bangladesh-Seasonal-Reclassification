@@ -50,6 +50,6 @@ else:
     plt.savefig(os.path.join(fig_path, 'Figure3_PCA_Variance.png'), dpi=300, bbox_inches='tight')
     plt.close()
 
-    print("\n--- STEP 2/4 COMPLETE ---")
+    print("\n--- STEP COMPLETE ---")
     print(f"Total Variance (PC1-PC3): {cum_var[2]*100:.2f}%")
     print(f"Saved to: {fig_path}")
