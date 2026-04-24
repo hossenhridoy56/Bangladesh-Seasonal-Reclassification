@@ -42,14 +42,13 @@ for name, coord in station_coords.items():
         popup=name
     ).add_to(cluster)
 
-# এই HTML টা ব্যবহার করুন - লিংক থাকবে, কিন্তু ম্যাপ দেখাবে
 title_html = """
 <h3 align="center"><b>
 Figure 1: Spatial Distribution of 36 Meteorological Stations in Bangladesh
 </b></h3>
 <p align="center">
-<a href="#" onclick="window.open(window.location.href,'_blank'); return false;" target="_blank">
-🗺️ Click here to open Interactive Map in full window
+<a href="https://htmlpreview.github.io/?https://github.com/hossenhridoy56/Bangladesh-Seasonal-Reclassification/blob/main/figures/Figure1_Map.html" target="_blank">
+🗺️ Click here to view Interactive Map
 </a>
 </p>
 """
