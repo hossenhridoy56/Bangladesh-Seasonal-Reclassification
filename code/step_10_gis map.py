@@ -48,7 +48,6 @@ Figure 1: Spatial Distribution of 36 Meteorological Stations in Bangladesh
 </b></h3>
 <p align="center">
 <a href="https://htmlpreview.github.io/?https://github.com/hossenhridoy56/Bangladesh-Seasonal-Reclassification/blob/main/figures/Figure1_Map.html" target="_blank">
-🗺️ Click here to view Interactive Map
 </a>
 </p>
 """
