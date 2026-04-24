@@ -46,6 +46,11 @@ title_html = """
 <h3 align="center"><b>
 Figure 1: Spatial Distribution of 36 Meteorological Stations in Bangladesh
 </b></h3>
+<p align="center">
+<a href="https://github.com/hossenhridoy56/Bangladesh-Seasonal-Reclassification/blob/main/figures/Figure1_Map.html" target="_blank">
+🔍 View Interactive GIS Map (Click to open full interactive version)
+</a>
+</p>
 """
 m.get_root().html.add_child(folium.Element(title_html))
 
