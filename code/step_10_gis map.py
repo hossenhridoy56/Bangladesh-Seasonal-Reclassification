@@ -4,7 +4,7 @@ from folium.plugins import MarkerCluster
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 base_path = os.path.abspath(os.path.join(script_dir, ".."))
-fig_path  = os.path.join(base_path, "figures")
+fig_path = os.path.join(base_path, "docs", "index.html")
 
 os.makedirs(fig_path, exist_ok=True)
 
