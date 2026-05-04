@@ -247,7 +247,7 @@ sig_chi = p_chi2 < 0.05
 print(f"  → {'SIGNIFICANT' if sig_chi else 'Not significant'} at α=0.05")
 
 # ================================
-# ASSEMBLE TABLE 5
+# ASSEMBLE TABLE 7
 # ================================
 rows6 = []
 
@@ -289,9 +289,9 @@ rows6.append({
     'Effect / Notes': 'Season-months count contingency table',
 })
 
-table6_df   = pd.DataFrame(rows6)
-table6_path = os.path.join(tab_path, "Table5_Significance_Tests.csv")
-table6_df.to_csv(table6_path, index=False)
+table7_df   = pd.DataFrame(rows6)
+table7_path = os.path.join(tab_path, "Table7_Significance_Tests.csv")
+table7_df.to_csv(table7_path, index=False)
 
 # ================================
 # FINAL SUMMARY
@@ -324,5 +324,5 @@ significant, four complementary tests were applied:
     the distribution of months across seasons {'changed significantly' if sig_chi else 'did not change significantly'}
     between the two periods.
 
-Table 5 saved → {table5_path}
+Table 7 saved → {table7_path}
 """)

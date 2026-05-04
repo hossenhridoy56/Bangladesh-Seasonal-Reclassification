@@ -31,6 +31,7 @@ else:
 
     vars_7 = ['rainfall', 'tmax', 'tmin', 'cloud', 'wind', 'humidity', 'dry_bulb']
     df = df.dropna(subset=vars_7, how='all')
+    df = df.drop_duplicates(subset=['Station', 'Year', 'Month'], keep='first')
 
     df.to_csv(output_step2, index=False)
 

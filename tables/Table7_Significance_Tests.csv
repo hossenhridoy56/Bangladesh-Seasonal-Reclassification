@@ -1,0 +1,13 @@
+Test,Variable / Metric,Statistic,p-value,Significant (α=0.05),Effect / Notes
+Permutation test (N=2000),Cluster shift count (D1 vs D3),4/12 months shifted,0.3635,No,Mean permuted = 2.6 months
+Mann-Whitney U (D1 vs D3),rainfall,U = 9449824.5,0.000207,Yes,r = 0.0464 (Small); D1 > D3
+Mann-Whitney U (D1 vs D3),tmax,U = 8890359.0,0.213665,No,r = 0.0156 (Small); D3 > D1
+Mann-Whitney U (D1 vs D3),tmin,U = 8610309.0,0.0002,Yes,r = 0.0466 (Small); D3 > D1
+Mann-Whitney U (D1 vs D3),cloud,U = 9164702.0,0.233493,No,r = 0.0148 (Small); D1 > D3
+Mann-Whitney U (D1 vs D3),wind,U = 11967231.0,0.0,Yes,r = 0.3251 (Large); D1 > D3
+Mann-Whitney U (D1 vs D3),humidity,U = 8893197.5,0.222704,No,r = 0.0153 (Small); D3 > D1
+Mann-Whitney U (D1 vs D3),dry_bulb,U = 8522424.0,7e-06,Yes,r = 0.0563 (Small); D3 > D1
+Bootstrap CI (B=1000),Decade 1 vs Decade 2,DTW = 0.473923,N/A,N/A,"95% CI [0.322, 0.7826]"
+Bootstrap CI (B=1000),Decade 2 vs Decade 3,DTW = 1.057412,N/A,N/A,"95% CI [0.8076, 1.3599]"
+Bootstrap CI (B=1000),Decade 1 vs Decade 3,DTW = 1.245992,N/A,N/A,"95% CI [0.9309, 1.5609]"
+Chi-square,Season frequency (D1 vs D3),"χ² = 0.0000, df = 3",1.0,No,Season-months count contingency table
