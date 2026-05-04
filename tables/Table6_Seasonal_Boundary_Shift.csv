@@ -1,9 +1,0 @@
-Boundary Component,Decade 1,Decade 3,Interpretation
-Winter Duration,"Jan, Feb, Dec","Jan, Nov, Dec",Winter shifted
-Pre-Monsoon Duration,"Jun, Jul, Aug, Sep","Jun, Jul, Aug, Sep",unchanged
-Monsoon Duration,"Oct, Nov","Feb, Mar",Monsoon shifted
-Post-Monsoon Duration,"Mar, Apr, May","Apr, May, Oct",Post-Monsoon shifted
-Mar Boundary,Post-Monsoon,Monsoon,Mar boundary shifted from Post-Monsoon to Monsoon
-Apr Boundary,Post-Monsoon,Post-Monsoon,Apr boundary unchanged
-Oct Boundary,Monsoon,Post-Monsoon,Oct boundary shifted from Monsoon to Post-Monsoon
-Nov Boundary,Monsoon,Winter,Nov boundary shifted from Monsoon to Winter

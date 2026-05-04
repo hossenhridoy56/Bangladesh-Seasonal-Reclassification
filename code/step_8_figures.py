@@ -113,15 +113,36 @@ def plot_figure11():
         get_cluster(d3)
     ], index=['Decade 1','Decade 2','Decade 3'], columns=months)
 
-    plt.figure(figsize=(10,5))
-    sns.heatmap(mat, annot=True, cmap='viridis',
-                cbar_kws={'label':'Cluster ID'},
-                linewidths=0.5)
+    # Season mapping
+    season_labels = {0:'Winter', 1:'Pre-Monsoon', 2:'Monsoon', 3:'Post-Monsoon'}
+    season_colors = {'Winter':'#2166AC', 'Pre-Monsoon':'#D6604D',
+                     'Monsoon':'#4DAC26', 'Post-Monsoon':'#762A83'}
 
-    plt.title('Figure 11: Decadal Cluster Assignment Heatmap', pad=15, fontweight='bold')
+    # Numeric → season label
+    mat_season = mat.replace(season_labels)
+
+    # Convert to numeric colormap (map season to color index)
+    color_map = mat_season.applymap(lambda s: list(season_colors.keys()).index(s))
+
+    plt.figure(figsize=(10,5))
+    sns.heatmap(color_map, annot=False, cmap=list(season_colors.values()),
+                cbar=False, linewidths=0.5)
+
+    # Custom legend
+    from matplotlib.patches import Patch
+    legend_elements = [Patch(facecolor=color, label=season) 
+                       for season, color in season_colors.items()]
+    plt.legend(handles=legend_elements, title='Season',
+               bbox_to_anchor=(1.05,1), loc='upper left')
+
+    plt.title('Figure 11: Decadal Cluster Assignment Heatmap (Season Colors)',
+              pad=15, fontweight='bold')
     plt.tight_layout()
-    plt.savefig(os.path.join(fig_path, 'Figure11 Decadal Cluster Assignment Heatmap.png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure11_Season_Color.png'), dpi=300)
     plt.close()
+
+
+
 
 def plot_figure12():
     season_map = {'Winter':0,'Pre-Monsoon':1,'Monsoon':2,'Post-Monsoon':3}

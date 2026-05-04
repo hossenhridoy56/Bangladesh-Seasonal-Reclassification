@@ -5,4 +5,7 @@ matplotlib
 seaborn
 folium
 scikit-learn
-os-sys
+fastdtw
+selenium
+webdriver-manager
+plotly
