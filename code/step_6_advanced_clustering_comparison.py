@@ -73,24 +73,25 @@ else:
     plt.close()
 
     Z = sch.linkage(scaled, method='ward')
-    stable_dist = 2.53 
+
+    cut_dist = 2.53   # visual reference only, not claimed as statistical optimum
 
     plt.figure(figsize=(10, 7), facecolor='white')
     dendro = sch.dendrogram(
-        Z, 
-        labels=month_order, 
-        leaf_rotation=0, 
-        leaf_font_size=11,
-        color_threshold=2.55 
-    )
+    Z,
+    labels=month_order,
+    leaf_rotation=0,
+    leaf_font_size=11,
+    color_threshold=cut_dist
+)
 
-    plt.axhline(y=stable_dist, color='red', linestyle='--', 
-                label=f'Stable Cluster Formation (Distance = {stable_dist})')
-    
+    plt.axhline(y=cut_dist, color='red', linestyle='--',
+            label=f'Visual Four-Cluster Cut (Distance ≈ {cut_dist:.2f})')
+
     plt.title('Figure 7: Hierarchical Dendrogram (Ward Linkage)', fontsize=14, fontweight='bold', pad=15)
-    plt.ylabel('Euclidean Linkage Distance (Standardized)', fontsize=12)
+    plt.ylabel('Ward Linkage Distance (Standardized Euclidean)', fontsize=12)
     plt.xlabel('Months')
-    plt.legend(loc='upper right')
+    plt.legend(loc='upper center')
     plt.grid(axis='y', linestyle=':', alpha=0.5)
 
     plt.savefig(os.path.join(fig_path, 'Figure7_Dendrogram.png'), dpi=300, bbox_inches='tight')
