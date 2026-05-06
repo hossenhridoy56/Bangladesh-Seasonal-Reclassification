@@ -69,7 +69,7 @@ else:
         ax.spines['right'].set_visible(False)
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
-    plt.savefig(os.path.join(fig_path, 'Figure6_Validation_Metrics.png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure6_Validation_Metrics.png'), dpi=600)
     plt.close()
 
     Z = sch.linkage(scaled, method='ward')
@@ -94,7 +94,7 @@ else:
     plt.legend(loc='upper center')
     plt.grid(axis='y', linestyle=':', alpha=0.5)
 
-    plt.savefig(os.path.join(fig_path, 'Figure7_Dendrogram.png'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(fig_path, 'Figure7_Dendrogram.png'), dpi=600, bbox_inches='tight')
     plt.close()
 
     gmm = GaussianMixture(n_components=4, random_state=42).fit(scaled)

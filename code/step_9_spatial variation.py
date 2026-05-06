@@ -95,7 +95,7 @@ plt.legend(handles=patches, title='Season',
 
 plt.tight_layout()
 plt.savefig(os.path.join(fig_path, 'Figure13_Seasonal cluster assignments of the stations of Bangladesh.png'),
-            dpi=300, bbox_inches='tight')
+            dpi=600, bbox_inches='tight')
 
 plt.close()
 

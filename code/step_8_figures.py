@@ -49,9 +49,7 @@ def plot_figure8():
     ax.grid(alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(fig_path, 'Figure8 Rainfall Probability Density.png'), dpi=300)
-    plt.close()
-
+    plt.savefig(os.path.join(fig_path, 'Figure8 Rainfall Probability Density.png'), dpi=600)
 def plot_figure9():
     features = ['rainfall','tmax','humidity','cloud']
 
@@ -77,7 +75,7 @@ def plot_figure9():
 
     axes[0,0].legend()
     plt.tight_layout(rect=[0,0,1,0.96])
-    plt.savefig(os.path.join(fig_path, 'Figure9 Decadal Changes in Climatic Variables (1983–2014).png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure9 Decadal Changes in Climatic Variables (1983–2014).png'), dpi=600)
     plt.close()
 
 def plot_figure10():
@@ -97,7 +95,7 @@ def plot_figure10():
     plt.grid(axis='y',alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(fig_path, 'Figure10 Variable-wise DTW Distances.png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure10 Variable-wise DTW Distances.png'), dpi=600)
     plt.close()
 
 def plot_figure11():
@@ -138,7 +136,7 @@ def plot_figure11():
     plt.title('Figure 11: Decadal Cluster Assignment Heatmap (Season Colors)',
               pad=15, fontweight='bold')
     plt.tight_layout()
-    plt.savefig(os.path.join(fig_path, 'Figure11_Season_Color.png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure11_Season_Color.png'), dpi=600)
     plt.close()
 
 
@@ -174,7 +172,7 @@ def plot_figure12():
     plt.grid(axis='y',alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(fig_path, 'Figure12_Phase shift analysis.png'), dpi=300)
+    plt.savefig(os.path.join(fig_path, 'Figure12_Phase shift analysis.png'), dpi=600)
     plt.close()
 
 if __name__ == "__main__":

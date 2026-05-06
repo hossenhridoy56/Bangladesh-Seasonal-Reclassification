@@ -26,7 +26,7 @@ else:
     corr = df[features].corr()
     sns.heatmap(corr, annot=True, cmap='RdBu_r', center=0, fmt='.2f', linewidths=0.5)
     plt.title('Figure 2: Multivariate Correlation Analysis', fontsize=14, fontweight='bold')
-    plt.savefig(os.path.join(fig_path, 'Figure2_Correlation_Heatmap.png'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(fig_path, 'Figure2_Correlation_Heatmap.png'), dpi=600, bbox_inches='tight')
     plt.close()
     
     scaler = StandardScaler()
@@ -47,7 +47,7 @@ else:
     ax.legend(loc='best')
     plt.grid(axis='y', alpha=0.3)
     
-    plt.savefig(os.path.join(fig_path, 'Figure3_PCA_Variance.png'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(fig_path, 'Figure3_PCA_Variance.png'), dpi=600, bbox_inches='tight')
     plt.close()
 
     print("\n--- STEP COMPLETE ---")

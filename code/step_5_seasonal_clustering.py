@@ -109,7 +109,7 @@ else:
     plt.ylabel('Variable', fontweight='bold')
     
     heatmap_path = os.path.join(fig_path, 'Figure5_Seasonal_Heatmap_Zscore.png')
-    plt.savefig(heatmap_path, dpi=300, bbox_inches='tight')
+    plt.savefig(heatmap_path, dpi=600, bbox_inches='tight')
     plt.close()
     
     print(f"Heatmap saved to: {heatmap_path}")
