@@ -32,3 +32,41 @@ as a separate transition month.
 ├── requirements.txt Python package versions
 ├── LICENSE MIT License
 └── README.md
+
+
+## Requirements
+
+- Python 3.11
+- See `requirements.txt` for package versions
+
+Install dependencies:
+pip install -r requirements.txt
+
+
+## Reproducing the analysis
+python code/Complete_Analysis.py
+
+
+Outputs are written to `tables/` and `figures/`.
+
+## Data
+
+Raw station records were obtained from the Bangladesh Meteorological 
+Department (BMD; https://live3.bmd.gov.bd/) and are subject to BMD's 
+data-sharing policy. Access requests should be directed to BMD.
+
+Processed data (`data/master_clean.csv`) contains 10,865 station-months 
+across 33 stations and 30 years.
+
+## Citation
+
+If you use this code or data, please cite the manuscript.
+
+## License
+
+MIT License — see `LICENSE`.
+
+## Contact
+
+- **Md. Hridoy Hossen** — hridoy1922025.stat@std.iu.ac.bd
+- **Md. Matiur Rahman Molla** — matiuriustat@gmail.com
