@@ -1,0 +1,11 @@
+Rank,Partition,WCSS,Gap_to_best_pct,ARI_vs_primary,Silhouette
+1,Jan Feb Nov Dec | Mar Apr | May Oct | Jun Jul Aug Sep,10.0824,0.0,0.867,0.397
+2,Jan Feb Nov Dec | Mar Apr May | Jun Jul Aug Sep | Oct,10.1074,0.248,1.0,0.389
+3,Jan Feb Dec | Mar Apr May | Jun Jul Aug Sep | Oct Nov,10.2803,1.963,0.819,0.406
+4,Jan Feb Nov Dec | Mar Apr May | Jun Jul Aug | Sep Oct,10.5912,5.046,0.819,0.373
+5,Jan Feb Nov Dec | Mar Apr | May Jun Jul Aug Sep | Oct,10.7253,6.376,0.753,0.347
+6,Jan Feb Nov Dec | Mar Apr | May Sep Oct | Jun Jul Aug,10.7623,6.744,0.638,0.356
+7,Jan Feb Dec | Mar Apr | May Jun Jul Aug Sep | Oct Nov,10.8982,8.091,0.569,0.387
+8,Jan Nov Dec | Feb Mar | Apr May Oct | Jun Jul Aug Sep,11.0701,9.797,0.638,0.344
+9,Jan Feb Nov Dec | Mar Apr | May Jun Jul Aug | Sep Oct,11.1017,10.11,0.602,0.324
+10,Jan Nov Dec | Feb Mar | Apr May | Jun Jul Aug Sep Oct,11.127,10.361,0.569,0.359

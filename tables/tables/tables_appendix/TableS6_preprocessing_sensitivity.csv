@@ -1,0 +1,7 @@
+Variant,ARI_vs_primary,Partition
+Baseline (raw rainfall),1.0,Jan Feb Nov Dec | Jun Jul Aug Sep | Mar Apr May | Oct
+sqrt rainfall,1.0,Jan Feb Nov Dec | Jun Jul Aug Sep | Mar Apr May | Oct
+log(1+rainfall),0.569,Apr May | Jan Nov Dec | Feb Mar | Jun Jul Aug Sep Oct
+"First 3 PCs, whitened",0.582,Jan Feb Dec | Sep Oct Nov | Mar Apr May | Jun Jul Aug
+Wind excluded,0.867,May Oct | Jan Feb Nov Dec | Mar Apr | Jun Jul Aug Sep
+Monthly MEDIANS instead of means,0.819,Jun Jul Aug Sep | Jan Feb Dec | Mar Apr May | Oct Nov

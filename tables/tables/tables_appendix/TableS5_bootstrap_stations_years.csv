@@ -1,0 +1,9 @@
+Resampled_unit,K,Mean_ARI,P2.5,P97.5,Share_identical_to_reference
+stations,3,0.973,0.753,1.0,0.893
+stations,4,0.931,0.753,1.0,0.635
+stations,5,0.858,0.564,1.0,0.409
+stations,6,0.789,0.693,0.816,0.001
+years,3,0.959,0.737,1.0,0.838
+years,4,0.884,0.569,1.0,0.485
+years,5,0.793,0.564,1.0,0.294
+years,6,0.783,0.613,1.0,0.05
