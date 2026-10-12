@@ -23,3 +23,12 @@ description (Winter, Pre-Monsoon, Monsoon, Post-Monsoon), with October
 as a separate transition month.
 
 ## Repository structure
+
+├── code/ Analysis scripts
+├── data/ Processed station-month dataset
+├── tables/ Tables 1-8 and S1-S8 (CSV)
+├── figures/ Figures 1-8 and FigS1 (PNG)
+├── docs/ Project documentation
+├── requirements.txt Python package versions
+├── LICENSE MIT License
+└── README.md
