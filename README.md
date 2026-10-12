@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23324622.svg)](https://doi.org/10.5281/zenodo.23324622)
+
 # Bangladesh Seasonal Reclassification
 
 Analysis code and processed data for the manuscript:
