@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper."
+title: "Bangladesh Seasonal Reclassification"
+abstract: "Analysis code and processed data for a clustering-based reclassification of Bangladesh's monthly climate."
+authors:
+  - family-names: "Molla"
+    given-names: "Md. Matiur Rahman"
+    email: "matiuriustat@gmail.com"
+    affiliation: "Islamic University, Kushtia, Bangladesh"
+  - family-names: "Hossen"
+    given-names: "Md. Hridoy"
+    orcid: "https://orcid.org/0009-0002-5573-4688"
+    email: "hridoy1922025.stat@std.iu.ac.bd"
+    affiliation: "Islamic University, Kushtia, Bangladesh"
+  - family-names: "Siddika"
+    given-names: "Ayesha"
+    email: "ayesha1922050.stat@std.iu.ac.bd"
+    affiliation: "Islamic University, Kushtia, Bangladesh"
+version: "1.0.0"
+date-released: "2026-10-13"
+license: MIT
+repository-code: "https://github.com/hossenhridoy56/Bangladesh-Seasonal-Reclassification"
+keywords:
+  - climatology
+  - Bangladesh
+  - cluster analysis
+  - K-means
+  - season classification
+  - monsoon
