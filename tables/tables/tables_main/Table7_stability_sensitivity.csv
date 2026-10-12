@@ -1,0 +1,12 @@
+Check,Result
+Ward clustering vs K-Means,ARI = 0.638
+"Bootstrap of months (1,000 samples)",Mean ARI = 0.789; 95% interval 0.395 to 1.000
+"Shuffled-variable null (2,000 draws)",Observed silhouette 0.389; null mean 0.214; plus-one P = 0.0010
+360 year-month profiles,ARI of modal assignment vs national partition = 0.867
+Patanga and Jessore removed,ARI = 1.000
+Tmax dropped,ARI = 0.867
+Tmin dropped,ARI = 1.000
+Rainfall dropped,ARI = 0.819
+Cloud cover dropped,ARI = 0.819
+Humidity dropped,ARI = 1.000
+Wind dropped,ARI = 0.867
