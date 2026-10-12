@@ -1,7 +1,0 @@
-Variable,Impurity importance,Permutation importance (year-blocked)
-Tmin,0.291,0.155
-Tmax,0.238,0.137
-Cloud,0.205,0.197
-Humidity,0.114,0.059
-Rainfall,0.102,0.007
-Wind,0.051,0.018
